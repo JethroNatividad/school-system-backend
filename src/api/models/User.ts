@@ -9,6 +9,7 @@ export interface IUser extends Document {
 	isModerator: string;
 	role: string;
 	isDeleted: string;
+	_doc: any;
 }
 
 const userSchema: Schema = new Schema(

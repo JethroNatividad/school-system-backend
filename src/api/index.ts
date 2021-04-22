@@ -1,8 +1,8 @@
 import express, { Application } from 'express';
-import { todoRouter } from './routes/';
-import { SwaggerOptions } from 'swagger-ui-express';
 import SwaggerJsDoc from 'swagger-jsdoc';
 import SwaggerUI from 'swagger-ui-express';
+import { SwaggerOptions } from 'swagger-ui-express';
+import { todoRouter, authRouter } from './routes/';
 
 const api: Application = express();
 // You may add api specific middlewares here
@@ -39,5 +39,6 @@ api.use(express.json());
 api.use(express.urlencoded({ extended: false }));
 
 api.use('/todos', todoRouter);
+api.use('/auth', authRouter);
 
 export default api;
