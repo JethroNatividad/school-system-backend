@@ -10,6 +10,7 @@ export interface IUser extends Document {
 	role: string;
 	isDeleted: string;
 	_doc: any;
+	validPassword(password: string): boolean;
 }
 
 const userSchema: Schema = new Schema(
